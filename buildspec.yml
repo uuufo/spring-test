@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ./mvnw clean package -DskipTests
+      - ./mvnw clean package
   post_build:
     commands:
       - echo Build completed on `date`
