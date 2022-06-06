@@ -16,13 +16,9 @@ public class SpringDeploymentDemoApplication extends SpringBootServletInitialize
 		SpringApplication.run(SpringDeploymentDemoApplication.class, args);
 	}
 
-	@Value("${db.password}")
-	private String password;
-
 	@Bean
 	public CommandLineRunner loadInitialData(HelloRepository helloRepository) {
 		return (args) -> {
-			System.out.println(password);
 			if (helloRepository.findAll().size() == 0) {
 				helloRepository.save(new Hello("CodingNomads"));
 			}
